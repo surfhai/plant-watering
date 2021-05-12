@@ -1,4 +1,8 @@
 #include <Arduino.h>
+#include <Wire.h>
+
+// RTC
+#include "DS1307.h"
 
 #define DEBUG 1
 
@@ -18,6 +22,71 @@
 //#define MIN_WATER_WAIT_TIME 259200000UL
 #define MIN_WATER_WAIT_TIME 10000UL
 
+// RTC
+//DS1307 clock;
+
+
+void setup () {
+  // RTC
+  Serial.begin(9600);
+  //clock.begin();
+  //clock.fillByYMD(2020, 1, 1);
+  //clock.fillByHMS(0, 0, 0);
+  //clock.fillDayOfWeek(MON);
+  //clock.setTime();
+}
+
+/*
+void printDate() {
+  clock.getTime();
+  Serial.print(clock.hour, DEC);
+  Serial.print(":");
+  Serial.print(clock.minute, DEC);
+  Serial.print(":");
+  Serial.print(clock.second, DEC);
+  Serial.print("  ");
+  Serial.print(clock.month, DEC);
+  Serial.print("/");
+  Serial.print(clock.dayOfMonth, DEC);
+  Serial.print("/");
+  Serial.print(clock.year + 2000, DEC);
+  Serial.print(" ");
+  Serial.print(clock.dayOfMonth);
+  Serial.print("*");
+  switch (clock.dayOfWeek) // Friendly printout the weekday
+  {
+  case MON:
+    Serial.print("Montag");
+    break;
+  case TUE:
+    Serial.print("Dienstag");
+    break;
+  case WED:
+    Serial.print("Mittwoch");
+    break;
+  case THU:
+    Serial.print("Donnerstag");
+    break;
+  case FRI:
+    Serial.print("Freitag");
+    break;
+  case SAT:
+    Serial.print("Samstag");
+    break;
+  case SUN:
+    Serial.print("Sonntag");
+    break;
+  }
+  Serial.println(" ");
+}
+*/
+
+void loop () {
+  //printDate();
+  Serial.println("Serial Monitor yes!");
+}
+
+/*
 // moisture sensor on analog pin
 int moist_sensor_pin_1 = A0;
 int moist_sensor_pin_2 = A1;
@@ -169,13 +238,13 @@ void loop() {
         Serial.print("moist_val_1: ");
         Serial.println(moist_val_1);
       #endif
-/*
-        Serial.print("relay_timer_off_1: ");
-        Serial.println(relay_timer_off_1);
-        Serial.print("relay_timer_on_1: ");
-        Serial.println(relay_timer_on_1);
-      #endif
-      */
+
+        //Serial.print("relay_timer_off_1: ");
+        //Serial.println(relay_timer_off_1);
+        //Serial.print("relay_timer_on_1: ");
+        //Serial.println(relay_timer_on_1);
+      //#endif
+
       water_plant(relay_pin_1, moist_avg_1, relay_timer_off_1, relay_timer_on_1, 0b0001);
       water_plant(relay_pin_2, moist_avg_2, relay_timer_off_2, relay_timer_on_2, 0b0010);
       water_plant(relay_pin_3, moist_avg_3, relay_timer_off_3, relay_timer_on_3, 0b0100);
@@ -246,3 +315,4 @@ void loop() {
   }
   delay(100);
 }
+*/

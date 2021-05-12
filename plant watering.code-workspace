@@ -3,6 +3,10 @@
 		{
 			"name": "plant watering",
 			"path": "."
+		},
+		{
+			"name": "Magnetventilsteuerung",
+			"path": "../../../../Documents/PlatformIO/Projects/Magnetventilsteuerung"
 		}
 	],
 	"settings": {}
